@@ -1,8 +1,16 @@
 SHELL=bash
 
+PREFIX=
+CC=cc
+
+CPPFLAGS=-DDISC='"sda"'
+
+CFLAGS=-g -std=gnu99 -pedantic -Wall -Wextra
+LDFLAGS=
+
 
 all:
-	@echo -e '\e[31mNothing to do\e[39m'
+	cd src; $(CC) $(CFLAGS) $(LDFLAGS) $(CPPFLAGS) -o mbrreader.{out,h,c}
 
 
 install:
