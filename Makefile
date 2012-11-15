@@ -11,7 +11,6 @@ LDFLAGS=
 
 all:
 	cd src; $(CC) $(CFLAGS) $(LDFLAGS) $(CPPFLAGS) -o mbrreader.{out,h,c}
-	cd src; $(CC) $(CFLAGS) $(LDFLAGS) $(CPPFLAGS) -o keccak.{out,h,c}
 
 
 install:
@@ -27,7 +26,7 @@ clean:
 	for ext in $$exts; do			\
 	    find . | grep '.\.'"$$ext"'$$'	\
 	    while read file; do			\
-	        unlink "$$file"			\
+	        unlink "$$file";		\
 	    done				\
 	done
 	if [ -d "/bin" ]; then  rmdir "/bin";  done
