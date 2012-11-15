@@ -11,6 +11,7 @@ LDFLAGS=
 
 all:
 	cd src; $(CC) $(CFLAGS) $(LDFLAGS) $(CPPFLAGS) -o mbrreader.{out,h,c}
+	cd src; $(CC) $(CFLAGS) $(LDFLAGS) $(CPPFLAGS) -o keccak.{out,h,c}
 
 
 install:

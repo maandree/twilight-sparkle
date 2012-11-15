@@ -16,31 +16,23 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-#ifndef __MBRREADER_H__
-#define __MBRREADER_H__
+#ifndef __KECCAK_H__
+#define __KECCAK_H__
 
-#include <stdio.h>
 #include <stdlib.h>
+#include <stdio.h>
 
 
 
 /**
- * The size of the MBR code, this should never ever be modified.
+ * Calculate the checksum of buffer, using SHA-3 (Keccak)
+ * 
+ * @param  input       The input buffer
+ * @param  inputsize   The input buffer size
+ * @param  output      The output buffer
+ * @param  outputsize  The output buffer size
  */
-#define MBR_SIZE 446
+void checksum(unsigned char* input, size_t inputsize, unsigned char* output, size_t outputsize);
 
 
-
-/**
- * Print information a about something that is weird
- */
-#define printweird(message)  printf("\033[33mtwilight-sparkle: weird: \033[39m" message);
-
-/**
- * Print information a about an error
- */
-#define printerror(message)  printf("\033[1;31mtwilight-sparkle: error: \033[39m" message "\033[0m");
-
-
-
-#endif /* __MBRREADER_H__ */
+#endif /* __KECCAK_H__ */

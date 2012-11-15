@@ -17,8 +17,15 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 #include "mbrreader.h"
+#include "keccak.h"
 
 
+/**
+ * Mane method!
+ * 
+ * @param  argc  Full command line argument count (unused)
+ * @param  argv  Full command line argument array (unused)
+ */
 int main(int argc, char** argv)
 {
   (void) argc;
@@ -40,17 +47,20 @@ int main(int argc, char** argv)
 	      {
 		printerror("Could not read entire MBR.");
 		fclose(file);
+		free(mbr);
 		return 1;
 	      }
 	    total += gotbytes;
 	  }
 	}
       fclose(file);
+      free(mbr);
     }
   else
     {
       printerror("Cannot read disc /dev/" DISC ", are you root?\n");
     }
   
+  return 0;
 }
 
