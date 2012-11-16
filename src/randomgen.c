@@ -20,7 +20,7 @@
 
 
 /**
- * Cached static randomess
+ * Cached static randomness
  */
 static int cache = 0;
 
