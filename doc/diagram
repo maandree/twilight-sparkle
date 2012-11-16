@@ -4,25 +4,25 @@
            │                               │
            │                               │
            ▼                               ▼
-  rsa(, $predefinied key$)       rsa(, $predefinied key$)          $secret$
-         │           │                  │           │                 │
+  rsa(, $predefinied key$)       rsa(, $predefinied key$)          $secret$      ; Hashing (using RSA) is to make it hard a program to find it an replace it,
+         │           │                  │           │                 │          ; Of cause, it is all for nought if the perpetrator recognises this software.
          │           │                  │           │                 │
          │           ▼                  │           ▼                 │
-         │    /boot/mbr.sparkle         │    /boot/boot.sparkle       │
-         │                              │                             │
-         │                              │                             │
-         └──────────────────────────────┼─────────────────────────────┘
-                                        │
+         │    /boot/mbr.sparkle         │    /boot/boot.sparkle       │          ; First check, it does not need any passphrases input. This is not secure,
+         │                              │                             │          ; but it warns you before you enter a passphrases, that theoretically can
+         │                              │                             │          ; be sent over the internet to a remote machine or stored in a hidden space
+         └──────────────────────────────┼─────────────────────────────┘          ; on the computer. To improve invisibility of this program, output should
+                                        │                                        ; only be used if the check is successful.
                                         │
                                         ▼
-                  /dev/random        concat()
+                  /dev/random        concat()                                    ; Secure random should be used, it should just take a few seconds to generate.
                      │   │              │
                      │   │              │
                      │   └───────┬──────┘
                      │           │
                      │           │
                      │           ▼
-                     │          xor()
+                     │          xor()                                            ; Protection against known-plaintext attacks.
                      │           │
                      │           │
                      └─────┬─────┘
@@ -33,6 +33,8 @@
                            │
                            │
                            ▼
-                 /boot/twilight.sparkle
+                 /boot/twilight.sparkle                                          ; Last check, this is secure, and may always give an output.
+                                                                                 ; If a bootkit is detected you should change your passphrases
+                                                                                 ; needed to get this far and all similar passphrases.
 
 
