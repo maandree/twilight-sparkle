@@ -8,6 +8,7 @@
 
 *.info
 *.gz
+*.pdf
 /*.aux
 /*.cp
 /*.cps
