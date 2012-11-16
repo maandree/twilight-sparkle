@@ -4,7 +4,7 @@
            │                               │
            │                               │
            ▼                               ▼
-  rsa(, $predefinied key$)       rsa(, $predefinied key$)          $secret$      ; Hashing (using RSA) is to make it hard a program to find it an replace it,
+  xor(, $predefinied salt$)      xor(, $predefinied salt$)         $secret$      ; Masking (using XOR) is to make it hard for a program to find it an replace it,
          │           │                  │           │                 │          ; Of cause, it is all for nought if the perpetrator recognises this software.
          │           │                  │           │                 │
          │           ▼                  │           ▼                 │
