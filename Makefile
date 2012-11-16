@@ -29,7 +29,7 @@ clean:
 	        unlink "$$file";		\
 	    done				\
 	done
-	if [ -d "/bin" ]; then  rmdir "/bin";  fi
+	if [ -d "./bin" ]; then  rmdir "./bin";  fi
 
 
 
