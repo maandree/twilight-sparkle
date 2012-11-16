@@ -1,0 +1,35 @@
+      mbr-code                       boot-loader
+         │                               │
+	 │                               │
+         ▼                               ▼
+rsa(, $predefinied key$)       rsa(, $predefinied key$)          $secret$
+       │           │                  │           │                 │
+       │           │                  │           │                 │
+       │           ▼                  │           ▼                 │
+       │    /boot/mbr.sparkle         │    /boot/boot.sparkle       │
+       │                              │                             │
+       │                              │                             │
+       └──────────────────────────────┼─────────────────────────────┘
+                                      │
+                                      │
+                                      ▼
+                /dev/random        concat()
+                   │   │              │
+                   │   │              │
+                   │   └───────┬──────┘
+                   │           │
+                   │           │
+                   │           ▼
+                   │          xor()
+                   │           │
+                   │           │
+                   └─────┬─────┘
+                         │
+                         │
+                         ▼
+          rinjdael(concat(), /dev/stdin)
+                         │
+                         │
+                         ▼
+               /boot/twilight.sparkle
+
