@@ -24,7 +24,7 @@ uninstall:
 clean:
 	exts="o so out gch";			\
 	for ext in $$exts; do			\
-	    find . | grep '.\.'"$$ext"'$$'	\
+	    find . | grep '.\.'"$$ext"'$$' |	\
 	    while read file; do			\
 	        unlink "$$file";		\
 	    done				\
