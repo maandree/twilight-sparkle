@@ -10,7 +10,7 @@ LDFLAGS=
 
 
 all:
-	cd src; $(CC) $(CFLAGS) $(LDFLAGS) $(CPPFLAGS) -o mbrreader.{out,h,c}
+	cd src; $(CC) $(CFLAGS) $(LDFLAGS) $(CPPFLAGS) -o mbrreader.{out,h,c} randomgen.{h,c}
 
 
 install:
